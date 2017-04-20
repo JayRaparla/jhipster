@@ -1,0 +1,31 @@
+entity Transaction {
+	  date String required,
+	  description String,
+	 amount String
+}
+
+entity Remark {
+	title String required,
+	content String required,
+	date ZonedDateTime required
+}
+
+entity Tag {
+	name String required minlength(2)
+}
+
+relationship ManyToOne {
+	Transaction{user(login)} to User
+}
+
+relationship ManyToMany {
+	Transaction{tag(name)} to Tag{transaction}
+
+}
+
+relationship ManyToMany {
+Transaction{remark(title)} to Remark{transaction}
+
+}
+
+paginate Remark, Tag with infinite-scroll

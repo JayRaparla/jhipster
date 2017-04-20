@@ -1,0 +1,49 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "transaction",
+            "relationshipName": "tag",
+            "otherEntityName": "tag",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "transaction",
+            "relationshipName": "remark",
+            "otherEntityName": "remark",
+            "otherEntityField": "title",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170420214248",
+    "entityTableName": "transaction",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

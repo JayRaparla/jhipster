@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Transaction.
+    -->
+    <changeSet id="20170420214248-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="transaction"
+                                 constraintName="fk_transaction_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="transactions_id"
+                                 baseTableName="transaction_tag"
+                                 constraintName="fk_transaction_tag_transactions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="transaction"/>
+        <addForeignKeyConstraint baseColumnNames="tags_id"
+                                 baseTableName="transaction_tag"
+                                 constraintName="fk_transaction_tag_tags_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tag"/>
+        
+        <addForeignKeyConstraint baseColumnNames="transactions_id"
+                                 baseTableName="transaction_remark"
+                                 constraintName="fk_transaction_remark_transactions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="transaction"/>
+        <addForeignKeyConstraint baseColumnNames="remarks_id"
+                                 baseTableName="transaction_remark"
+                                 constraintName="fk_transaction_remark_remarks_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="remark"/>
+        
+    </changeSet>
+</databaseChangeLog>
