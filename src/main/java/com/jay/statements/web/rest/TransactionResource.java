@@ -5,9 +5,15 @@ import com.jay.statements.domain.Transaction;
 
 import com.jay.statements.repository.TransactionRepository;
 import com.jay.statements.web.rest.util.HeaderUtil;
+import com.jay.statements.web.rest.util.PaginationUtil;
+import io.swagger.annotations.ApiParam;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -79,14 +85,16 @@ public class TransactionResource {
     /**
      * GET  /transactions : get all the transactions.
      *
+     * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of transactions in body
      */
     @GetMapping("/transactions")
     @Timed
-    public List<Transaction> getAllTransactions() {
-        log.debug("REST request to get all Transactions");
-        List<Transaction> transactions = transactionRepository.findAllWithEagerRelationships();
-        return transactions;
+    public ResponseEntity<List<Transaction>> getAllTransactions(@ApiParam Pageable pageable) {
+        log.debug("REST request to get a page of Transactions");
+        Page<Transaction> page = transactionRepository.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/transactions");
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
     /**

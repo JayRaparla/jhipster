@@ -44,6 +44,6 @@
     "changelogDate": "20170420214248",
     "entityTableName": "transaction",
     "dto": "no",
-    "pagination": "no",
+    "pagination": "infinite-scroll",
     "service": "no"
 }

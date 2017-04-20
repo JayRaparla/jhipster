@@ -28,4 +28,4 @@ Transaction{remark(title)} to Remark{transaction}
 
 }
 
-paginate Remark, Tag with infinite-scroll
+paginate Transaction, Remark, Tag with infinite-scroll
