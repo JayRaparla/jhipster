@@ -71,7 +71,14 @@ table td[class*=col-], table th[class*=col-] {
     position: static;
     display: table-cell;
     float: none;
+
 }
+//table tr{
+//    display: compact;
+//    padding: 0;
+//    margin: 0;
+//
+//}
 
 .footer {
     border-top: 1px solid rgba(0,0,0,.125);
