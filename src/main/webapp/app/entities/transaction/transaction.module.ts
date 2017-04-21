@@ -15,6 +15,7 @@ import {
     TransactionDeleteDialogComponent,
     transactionRoute,
     transactionPopupRoute,
+    TransactionResolvePagingParams,
 } from './';
 
 let ENTITY_STATES = [
@@ -46,6 +47,7 @@ let ENTITY_STATES = [
     providers: [
         TransactionService,
         TransactionPopupService,
+        TransactionResolvePagingParams,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
