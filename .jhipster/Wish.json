@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "wishList",
+            "otherEntityName": "wishList",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "wish"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "addedOn",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "completeBy",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170421001357",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "wish",
+    "pagination": "infinite-scroll"
+}

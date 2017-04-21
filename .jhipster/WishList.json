@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "wishList"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nameOfList",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170420233845",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "wish_list",
+    "pagination": "pagination"
+}

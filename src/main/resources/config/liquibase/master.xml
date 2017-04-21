@@ -8,7 +8,11 @@
     <include file="classpath:config/liquibase/changelog/20170420214248_added_entity_Transaction.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170420214249_added_entity_Remark.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170420214250_added_entity_Tag.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170420233845_added_entity_WishList.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170421001357_added_entity_Wish.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="classpath:config/liquibase/changelog/20170420214248_added_entity_constraints_Transaction.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170420233845_added_entity_constraints_WishList.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170421001357_added_entity_constraints_Wish.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

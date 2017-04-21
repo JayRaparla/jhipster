@@ -1,0 +1,43 @@
+
+<div *ngIf="wish">
+    <h2><span>Wish</span> {{wish.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{wish.description}}</span>
+        </dd>
+        <dt><span>Added On</span></dt>
+        <dd>
+            <span>{{wish.addedOn | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Complete By</span></dt>
+        <dd>
+            <span>{{wish.completeBy | date:'medium'}}</span>
+        </dd>
+        <dt><span>Wish List</span></dt>
+        <dd>
+            <div *ngIf="wish.wishList">
+                <a [routerLink]="['/wish-list', wish.wishList?.id]">{{wish.wishList?.id}}</a>
+            </div>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+            {{wish.user?.login}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'wish/'+ wish.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
